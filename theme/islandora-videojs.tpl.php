@@ -1,13 +1,13 @@
 <video id="islandora_videojs" <?php if (!$responsive): ?>width="640" height="360"<?php endif; ?>
   <?php if (!$center_play_button): ?>class="video-js vjs-default-skin"
-  <?php else: ?>class="video-js vjs-default-skin vjs-big-play-centered" <?php endif; ?>
+  <?php else: ?>class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" <?php endif; ?>
     controls
   preload="auto"
   <?php if (isset($tn)): ?>
     poster="<?php print $tn; ?>"
   <?php endif; ?>
   <?php if ($responsive): ?>
-    data-setup='{"fluid": true}'
+    data-setup='{"fluid": true, "liveui": true, "liveTracker": false}'
   <?php else: ?>
     data-setup="{}"
   <?php endif; ?>
